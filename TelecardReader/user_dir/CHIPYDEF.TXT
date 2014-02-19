@@ -1,0 +1,2098 @@
+*
+**************************************************
+*            CHIPY .DEF FILE                     *
+*                                                *
+* Version  : 1.13                                *
+* Updated  : 11 July 1999                        *
+*                                                *
+*------------------------------------------------*
+*                                                *
+*       This file is to be used with CHIPY       *
+*  'Le' Smartcard Reader Program by Triple Zero  *
+*  Archived at http://perso.wanadoo.fr/telecard/ *
+*                                                *
+* YOU WILL NEED CHIPY v 1.02 (11 november 1998)  *
+*                                                *
+**************************************************
+*
+*
+*------------------------------------------------*
+* Country  : Multiple                            *
+* Usage    : Movie Card                          *
+* Issuer   : Multiple                            *
+* Updated  : 21 March 1999                       *
+*------------------------------------------------*
+*
+*
+CARD     "GENEVE","Multiple","Movie Card","Multiple"
+VERIFY   8,19,EQ,$871
+VERIFY   80,95,EQ,$3109
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     20,31,EQ,$101,"Cinemonde / France - Morzine","Issuer/Country"
+TEXT     20,31,EQ,$303,"Groupement des cinemas Genevois / Swiss - Geneve","Issuer/Country"
+*
+*------------------------------------------------*
+* Country  : ALBANIA                             *
+* Usage    : Telecard                            *
+* Issuer   : Telekomi Shqiptar                   *
+*------------------------------------------------*
+*
+* Eurochip 128 bits (11 november 1998)
+*
+CARD     "ALBA_128","Albania","Telecard","Telekomi Shqiptar"
+VERIFY   0,31,EQ,$98203338
+CREDIT   UNIT,71,65,512
+CREDIT   UNIT,79,73,64
+CREDIT   UNIT,89,81,8
+CREDIT   UNIT,95,89,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+*
+*------------------------------------------------*
+* Country  : ALGERIA                             *
+* Usage    : Telecard                            *
+* Updated  : 3 December 1998                     *
+*------------------------------------------------*
+*
+CARD     "ALGERIA","Algeria","Telecard","xx"
+VERIFY   0,11,EQ,$409
+VERIFY   72,79,EQ,$01
+VALUE    TABLE,12,15
+VALUE    $A,50,10
+VALUE    $5,100,10
+VALUE    $1,140,10
+CREDIT   UNIT,100,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,9,0
+DISPLAY  BINARY,36,63,1
+*
+*------------------------------------------------*
+* Country  : ANDORRA                             *
+* Usage    : Telecard                            *
+* Issuer   : STA                                 *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1133","Andorra","Telecard","STA"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1133
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : ARGENTINA                           *
+* Usage    : Telecard                            *
+* Issuer   : Telecom Argentina                   *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "OTC_115C","Argentina","Telecard","Telecom Argentina"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$115C
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,9,0
+DISPLAY  BINARY,36,63,1
+TEXT     248,255,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : ARGENTINA                           *
+* Usage    : Telecard                            *
+* Issuer   : Telefonica de Argentina             *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "OTC_1E28","Argentina","Telecard","Telefonica de Argentina"
+VERIFY   8,31,EQ,$83FFFF
+VERIFY   80,95,EQ,$1E28
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $0002,20,0
+VALUE    $0003,25,0
+VALUE    $0005,50,0
+CREDIT   UNIT,255,106,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,35,EQ,$9,"Oberthur","Manufacturer"
+TEXT     32,35,EQ,$3,"G+D","Manufacturer"
+TEXT     32,35,EQ,$5,"Gemplus","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : AUSTRALIA                           *
+* Usage    : Telecard                            *
+* Issuer   : Telstra                             *
+* Updated  : 11 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "ATELSTRA","Australia","Telecard","Telstra"
+VERIFY   0,31,EQ,$E8206109
+VERIFY   104,111,EQ,$FF
+CURRENCY 0.01,2,"$"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+*------------------------------------------------*
+* Country  : BELGIUM                             *
+* Usage    : Telecard                            *
+* Issuer   : Belgacom                            *
+* Updated  : 16 January 1999                     *
+*------------------------------------------------*
+*
+CARD     "BELGACOM","Belgium","Telecard","Belgacom"
+VERIFY   0,23,EQ,$E93035
+VERIFY   104,111,EQ,$FF
+CURRENCY 0.1,2,"FB"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,0,0
+DISPLAY  BINARY,44,63,1
+*
+*------------------------------------------------*
+* Country  : BULGARIA                            *
+* Usage    : Telecard                            *
+* Issuer   : ???                                 *
+* Updated  : 24 January 1999                     *
+*------------------------------------------------*
+*
+* Eurochip 512 bits
+*
+CARD     "BULG_512","Bulgaria","Telecard","???"
+VERIFY   0,27,EQ,$930BAF5
+OR       0,27,EQ,$E82B075
+VALUE    TABLE,28,31
+VALUE    $0,100,0
+VALUE    $4,50,0
+VALUE    $8,200,0
+VALUE    $C,400,0
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+*
+*------------------------------------------------*
+* Country  : BULGARIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Betkom                              *
+* Updated  : 16 March 1999                       *
+*------------------------------------------------*
+*
+* Eurochip 512 bits
+*
+CARD     "BETKOM","Bulgaria","Telecard","BETKOM"
+VERIFY   0,23,EQ,$E93400
+OR       0,23,EQ,$972C00
+CREDIT   COUNT,64,71,4096
+CREDIT   COUNT,72,79,512
+CREDIT   COUNT,80,87,64
+CREDIT   COUNT,88,95,8
+CREDIT   COUNT,96,103,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,36,63,1
+*
+*------------------------------------------------*
+* Country  : CAMEROON                            *
+* Usage    : Telecard                            *
+* Issuer   : Intelcam                            *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1132","Cameroon","Telecard","Intelcam"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1132
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : CANADA                              *
+* Usage    : Telecard                            *
+* Issuer   : Bell                                *
+* Updated  : 04 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "CANB_512","Canada","Telecard","Bell"
+VERIFY   0,23,EQ,$93AB1C
+OR       0,23,EQ,$93ABBF
+VERIFY   24,31,EQ,$02
+OR       24,31,EQ,$03
+OR       24,31,EQ,$04
+VERIFY   104,127,EQ,$FFFFFF
+TEXT     "Gemplus","Manufacturer"
+TEXT     "If you have one of these cards","** ATTENTION PLEASE **"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : CHINA                               *
+* Usage    : Telecard                            *
+* Issuer   : China Telecom                       *
+* Updated  : 23 June 1999                        *
+*------------------------------------------------*
+*
+CARD     "CHINA","China","Telecard","China Telecom"
+VERIFY   0,23,EQ,$102B22
+OR       0,23,EQ,$983022
+OR       0,23,EQ,$983522
+OR       0,23,EQ,$993022
+OR       0,23,EQ,$E83022
+VERIFY   104,111,EQ,$FF
+CURRENCY 0.1,1,"RMB"
+VALUE    TABLE,28,31
+VALUE    $8,300,0
+VALUE    $9,500,0
+VALUE    $A,1000,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+*------------------------------------------------*
+* Country  : COMORES                             *
+* Usage    : Telecard                            *
+* Issuer   : SNPT                                *
+* Updated  : 13 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_1158","Comores","Telecard","SNPT"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1158
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,36,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : CROATIA                             *
+* Usage    : Telecard                            *
+* Issuer   : HPT                                 *
+*------------------------------------------------*
+*
+* 1st Generation (10 July 1999)
+*
+* 50 Units (10 July 1999)
+*
+CARD     "HPT_A_100","Croatia","Telecard","HPT"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E26
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $0005,50,0
+CREDIT   GROUP,255,206,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* 100 Units (10 July 1999)
+*
+CARD     "HPT_A_100","Croatia","Telecard","HPT"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E26
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $000A,100,0
+CREDIT   GROUP,255,156,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* Other first generation
+*
+CARD     "HPT_A","Croatia","Telecard","HPT"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E26
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $148A,200,0
+VALUE    $2A85,1000,0
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* Eurochip 128 bits (06 March 1999)
+*
+CARD     "HPT_B","Croatia","Telecard","HPT"
+VERIFY   0,23,EQ,$98308F
+OR       0,23,EQ,$99308F
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,28,31,0
+VALUE    $2,25,0
+VALUE    $6,50,0
+VALUE    $7,100,0
+VALUE    $3,200,0
+VALUE    $8,200,0
+VALUE    $5,500,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,0,0
+DISPLAY  BINARY,32,55,1
+*
+* 512 bits ??? (06 March 1999)
+*
+CARD     "HPT_C","Croatia","Telecard","HPT"
+VERIFY   0,23,EQ,$93AB8F
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,24,31
+VALUE    $2,25,0
+VALUE    $6,50,0
+VALUE    $7,100,0
+VALUE    $3,200,0
+VALUE    $5,500,0
+VALUE    $4,1000,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+TEXT     "Gemplus","Manufacturer"
+*
+* Eurochip 512 bits (06 March 1999)
+*
+CARD     "HPT_D","Croatia","Telecard","HPT"
+VERIFY   0,23,EQ,$E9308F
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,28,31,0
+VALUE    $2,25,0
+VALUE    $6,50,0
+VALUE    $7,100,0
+VALUE    $3,200,0
+VALUE    $5,500,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+* Eurochip 128 bits (06 March 1999)
+*
+CARD     "HPT_E","Croatia","Telecard","HPT"
+VERIFY   0,23,EQ,$102B8F
+VERIFY   56,63,EQ,$26
+VALUE    TABLE,28,31,0
+VALUE    $2,25,0
+VALUE    $6,50,0
+VALUE    $7,100,0
+VALUE    $3,200,0
+VALUE    $5,500,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+* Eurochip 128 bits (11 July 1999)
+*
+CARD     "HPT_G","Croatia","Telecard","HPT"
+VERIFY   0,23,EQ,$08D4F1
+OR       0,23,EQ,$190CF1
+OR       0,23,EQ,$990CF1
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,24,27,0
+VALUE    $4,25,0
+VALUE    $6,50,0
+VALUE    $E,100,0
+VALUE    $C,200,0
+CREDIT   UNIT,64,70,4096
+CREDIT   UNIT,72,78,512
+CREDIT   UNIT,80,86,64
+CREDIT   UNIT,88,94,8
+CREDIT   UNIT,96,102,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,39,36,$100000
+DISPLAY  BINARY,35,32,$10000
+DISPLAY  BINARY,47,44,$1000
+DISPLAY  BINARY,43,40,$100
+DISPLAY  BINARY,55,52,$10
+DISPLAY  BINARY,51,48,$1
+*
+*------------------------------------------------*
+* Country  : CUBA                                *
+* Usage    : Telecard                            *
+* Issuer   : ETECSA                              *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+* T1G
+*
+CARD     "OTC_119E","Cuba","Telecard","ETECSA"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$119E
+CHECKSUM 0,7,8,95,$D8,-1 
+CURRENCY 0.294118,2,"$ USD"
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,36,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+* 512 Bits long
+*
+CARD     "CUBA_512","Cuba","Telecard","ETECSA"
+VERIFY   0,23,EQ,$930B8F
+VERIFY   104,127,EQ,$FFFFFF
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,32,55,1
+TEXT     "If you have one of these cards","** ATTENTION PLEASE **"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : CZECH REPUBLIC / YOUGOSLAVIA        *
+* Usage    : Telecard                            *
+* Issuer   : SPT Telecom / Telecom Praha         *
+* Updated  : 12 Novembre 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_1155","Czech Republic / Yougoslavia","Telecard","SPT Telecom / Telecom Praha"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$1155
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CURRENCY 3,0,"Kc"
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : DANMARK                             *
+* Usage    : Telecard                            *
+* Issuer   : Tele Danmark                        *
+* Updated  : 3 December 1998                     *
+*------------------------------------------------*
+*
+CARD     "DANMARK","Danmark","Telecard","Tele Danmark"
+VERIFY   0,31,EQ,$E820FF00
+OR       0,31,EQ,$E839FF00
+VERIFY   104,111,EQ,$FF
+CURRENCY 0.01,2,"Kr"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxxx-"
+DISPLAY  FORMAT,DEC,0,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : DJIBOUTI                            *
+* Usage    : Telecard                            *
+* Issuer   : ???                                 *
+* Updated  : 11 July 1999                    *
+*------------------------------------------------*
+*
+CARD     "OTC_1115","Djibouti","Telecard","???"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$1115
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+*
+*------------------------------------------------*
+* Country  : EMIRATES                            *
+* Usage    : Telecard                            *
+* Issuer   : Etisalat                            *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_11C3","Emirates","Telecard","Etisalat"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$11C3
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CURRENCY 0.30,2,"Dhs" 
+CREDIT   UNIT,96,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxxx"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,35,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : ENGLAND                             *
+* Usage    : Telecard                            *
+* Issuer   : British Telecom                     *
+* Updated  : 11 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "ENGLAND","England","Telecard","British Telecom"
+VERIFY   0,23,EQ,$A822F7
+CURRENCY 0.01,2,"�"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"2x/x/"
+DISPLAY  FORMAT,DEC,6,0
+DISPLAY  BINARY,51,36,1
+DISPLAY  TEXT,"/"
+DISPLAY  FORMAT,DEC,4,0
+DISPLAY  BINARY,63,54,1
+*
+*------------------------------------------------*
+* Country  : ESTONIA                             *
+* Usage    : Telecard                            *
+* Issuer   : Eesti Telefon                       *
+*------------------------------------------------*
+*
+* Eurochip (512 bits)
+*
+CARD     "EEST_EUR","Estonia","Telecard","Eesti Telefon"
+VERIFY   0,31,EQ,$E82000CE
+OR       0,31,EQ,$E820FFCE
+OR       0,31,EQ,$E83500CE
+OR       0,31,EQ,$E93000CE
+OR       0,31,EQ,$E930CE00
+OR       0,31,EQ,$E934FFCE
+VERIFY   104,111,EQ,$FF
+VALUE    TABLE,60,63
+VALUE    $0,188,0
+VALUE    $4,313,0
+VALUE    $8,625,0
+CURRENCY 0.16,2,"Kr"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,57,1
+*
+* T2G Schlumberger
+*
+CARD     "EEST_T2G","Estonia","Telecard","Eesti Telefon"
+PROTOCOL P1
+* This card definition needs CHIPY v 1.02 (11 november 1998) 
+VERIFY   0,31,EQ,$83AD00CE
+VERIFY   64,71,EQ,$FF
+VERIFY   256,287,EQ,$F5F5F5F5
+VERIFY   384,415,EQ,$F5F5F5F5
+VERIFY   64,71,EQ,$FF
+VALUE    TABLE,60,63
+VALUE    $0,188,4492
+VALUE    $4,313,4367
+VALUE    $8,625,4055
+CURRENCY 0.16,2,"Kr"
+CREDIT   UNIT,72,79,-512
+CREDIT   UNIT,80,87,-64
+CREDIT   UNIT,88,95,-8
+CREDIT   UNIT,96,103,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,34,57,1
+*
+*------------------------------------------------*
+* Country  : FINLAND                             *
+* Usage    : Telecard                            *
+* Issuer   : Tele / Sonera                       *
+* Updated  : 02 December 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_1165","Finland","Telecard","Tele / Sonera"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1165
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Telecard (T1G)                      *
+* Issuer   : France Telecom                      *
+* Updated  : 29 August 1998                      *
+*------------------------------------------------*
+*
+CARD     "T1G","France","Telecard (T1G)","France Telecom"
+VERIFY   8,11,EQ,$0
+OR       8,15,EQ,$80
+VERIFY   80,87,EQ,$10
+OR       80,87,EQ,$14
+CHECKSUM 0,7,8,31,$E3,-4 
+CHECKSUM 32,39,40,63,$E3,-4
+CHECKSUM 64,71,72,95,$E3,-4
+VALUE    TABLE,88,95
+VALUE    $13,120,10
+VALUE    $07,60,10
+VALUE    $06,50,10
+VALUE    $05,40,10
+VALUE    $04,25,15
+VALUE    $02,5,15
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,5
+DISPLAY  BINARY,12,31,1
+DISPLAY  FORMAT,HEXA,4
+DISPLAY  BINARY,40,55,1
+TEXT     80,87,EQ,$14,"St Maarten"
+TEXT     248,255,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Telecard (T2G)                      *
+* Issuer   : France Telecom                      *
+* Updated  : 9 September 1998                    *
+*------------------------------------------------*
+*
+CARD     "T2G","France","Telecard (T2G)","France Telecom"
+VERIFY   0,15,EQ,$8140  
+VERIFY   96,103,EQ,$7F
+OR       96,103,EQ,$FF
+VERIFY   104,111,EQ,$FF 
+VERIFY   128,159,EQ,$FFFFFFFF
+VERIFY   160,191,EQ,$FFFFFFFF
+VALUE    TABLE,52,63
+VALUE    $00C,120,9
+VALUE    $005,50,9
+VALUE    $003,25,14
+VALUE    $001,5,14
+CREDIT   UNIT,71,64,-512
+CREDIT   UNIT,79,72,-64
+CREDIT   UNIT,87,80,-8
+CREDIT   UNIT,95,88,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,8
+DISPLAY  BINARY,16,47,1
+DISPLAY  FORMAT,HEXA,1
+DISPLAY  BINARY,48,51,1
+DISPLAY  "Certificate"
+DISPLAY  FORMAT,HEXA,4
+DISPLAY  BINARY,112,127,1
+TEXT     112,127,EQ,$0000,"Certificate erased"
+TEXT     96,103,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Telecard (T2G - Numero Unique)       *
+* Issuer   : France Telecom                      *
+* Updated  : 20 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "T2G_NU","France","Telecard (T2G - Numero Unique)","France Telecom"
+VERIFY   0,15,EQ,$8140  
+VERIFY   128,159,EQ,$FFFFFFFF
+VERIFY   160,191,EQ,$FFFFFFFF
+VALUE    TABLE,52,63
+VALUE    $101,5,14
+CREDIT   UNIT,71,64,-512
+CREDIT   UNIT,79,72,-64
+CREDIT   UNIT,87,80,-8
+CREDIT   UNIT,95,88,-1
+DISPLAY  "Number auto-dialed"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,96,127,1   
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,8
+DISPLAY  BINARY,16,47,1
+DISPLAY  FORMAT,HEXA,1
+DISPLAY  BINARY,48,51,1
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Urban Parking                       *
+* Issuer   : City Of Paris                       *
+* Updated  : 30 August 1998                      *
+*------------------------------------------------*
+*
+* Paris Carte First Generation
+*
+CARD     "P1G","France","Urban Parking (Paris Carte First Generation)","City Of Paris"
+VERIFY   8,31,EQ,$87413F
+VERIFY   82,83,EQ,$3
+VERIFY   96,127,EQ,$F8000000
+VALUE    TABLE,56,63
+VALUE    $50,1000,0
+VALUE    $A0,2000,0
+CURRENCY 0.10,2,"FF"
+CREDIT   TOKEN,128,131,132,159,32,36
+CREDIT   $E,-200
+CREDIT   $D,-100
+CREDIT   $C,-50
+CREDIT   $B,-20
+CREDIT   $A,-10
+CREDIT   $9,-5
+CREDIT   $8,-2
+CREDIT   $7,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,5
+DISPLAY  BINARY,62,81,1
+DISPLAY  FORMAT,HEXA,3
+DISPLAY  BINARY,84,95,1
+*
+* Paris Carte Second Generation
+*
+CARD     "P2G","France","Urban Parking (Paris Carte Second Generation)","City Of Paris"
+VERIFY   0,15,EQ,$012A
+OR       0,15,EQ,$13FF
+VERIFY   112,113,EQ,$3
+VERIFY   64,95,EQ,$FFFFFFFF
+VERIFY   320,351,EQ,$FFFFFFFF
+VALUE    TABLE,56,63
+VALUE    $14,1000,0
+VALUE    $28,2000,0
+CURRENCY 0.10,2,"FF"
+CREDIT   UNIT,319,114,1
+CREDIT   COUNT,352,415,206
+DISPLAY  "Units Remaining Check"
+DISPLAY  FORMAT,DEC,0,0
+DISPLAY  BINARY,96,111,1
+DISPLAY  TEXT," Units ("
+DISPLAY  FORMAT,DEC,0,2
+DISPLAY  BINARY,96,111,0.1
+DISPLAY  TEXT," FF)"
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,8
+DISPLAY  BINARY,16,47,1
+TEXT     0,15,EQ,$012A,"Schlumberger","Manufacturer"
+TEXT     0,15,EQ,$13FF,"Gemplus","Manufacturer"
+TEXT     0,15,EQ,$012A,"If you have one of these cards","** ATTENTION PLEASE **"
+TEXT     0,15,EQ,$012A,"Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Gaming card                         *
+* Issuer   : DisneyLand Paris                    *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1078","France","Gaming card","DisneyLand Paris"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1078
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,0
+CREDIT   UNIT,128,239,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,7,0
+DISPLAY  BINARY,40,63,1
+TEXT     240,247,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Cine Card                           *
+* Issuer   : Pathe Cinema                        *
+* Updated  : 03 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "SC_1109","France","Cine Card","Pathe Cinema"
+VERIFY   8,19,EQ,$831
+VERIFY   32,35,EQ,$0
+VERIFY   80,95,EQ,$1109
+CHECKSUM 0,7,8,95,$D8,-1 
+TEXT     "Schlumberger","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Pass Rencontres Internationales     *
+*            du cinema 9 - 20/10/1998            *
+* Issuer   : Videotheque de Paris                *
+* Updated  : 03 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "SO_1109","France","Pass Rencontres 9 - 20/OCT/1998","Videotheque de Paris"
+VERIFY   8,19,EQ,$831
+VERIFY   32,35,EQ,$1
+VERIFY   80,95,EQ,$1109
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,0,0
+DISPLAY  BINARY,40,63,1
+TEXT     "Solaic","Manufacturer"
+TEXT     "If you have one of these cards","** ATTENTION PLEASE **"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Car Wash                            *
+* Issuer   : BP - Mobil                          *
+* Updated  : 03 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "BP_MOBIL","France","Car Wash","BP - Mobil"
+VERIFY   0,31,EQ,$88802002
+VERIFY   32,55,EQ,$3C7582
+VERIFY   64,95,EQ,$A1000001
+VERIFY   96,105,EQ,$000
+VALUE    BCD,56,63,1,0
+CREDIT   UNIT,106,255,-1
+TEXT     "Not stored in the card","Serial Number"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Unknown                             *
+* Issuer   : Telelot                             *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "TELELOT","France","Unknown","Telelot"
+VERIFY   8,19,EQ,$831
+VERIFY   32,35,EQ,$3
+VERIFY   80,95,EQ,$1203
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,9,0
+DISPLAY  BINARY,36,63,1
+TEXT     "Schlumberger","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Cyber Cafe Card                     *
+* Issuer   : Cyberis                             *
+* Updated  : 11 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "CYBERIS","France","Cyber Cafe Card","Cyberis"
+PROTOCOL P1
+* This card definition needs CHIPY v 1.02 (11 november 1998) 
+VERIFY   0,23,EQ,$83AB0A
+VERIFY   64,71,EQ,$FF
+VERIFY   256,287,EQ,$F5F5F5F5
+VERIFY   384,415,EQ,$F5F5F5F5
+VALUE    TABLE,24,31
+VALUE    $30,50,4630
+VALUE    $40,15,4665
+CREDIT   UNIT,72,79,-512
+CREDIT   UNIT,80,87,-64
+CREDIT   UNIT,88,95,-8
+CREDIT   UNIT,96,103,-1
+*
+*------------------------------------------------*
+* Country  : FRANCE                              *
+* Usage    : Loyalty Card for touristic sites    *
+* Issuer   : Touriscard                          *
+* Updated  : 13 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "TOURIST","France","Loyalty Card for touristic sites","Touristcad"
+PROTOCOL P1
+* This card definition needs CHIPY v 1.02 (11 november 1998) 
+VERIFY   0,23,EQ,$83AB0E
+VERIFY   256,287,EQ,$F5F5F5F5
+VERIFY   384,415,EQ,$F5F5F5F5
+*
+*------------------------------------------------*
+* Country  : FRENCH POLYNESIA                    *
+* Usage    : Telecard                            *
+* Issuer   : OPT Polynesie Francaise             *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1016","French Polynesia","Telecard","OPT Polynesie Francaise"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1016
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : GAMBIA                              *
+* Usage    : Telecard                            *
+* Issuer   : Gamtel                              *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_113D","Gambia","Telecard","Gamtel"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$113D
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : GERMANY                             *
+* Usage    : Telecard                            *
+* Issuer   : Telekom                             *
+* Updated  : 06 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "GERMANY","Germany","Telecard","Telekom"
+VERIFY   0,23,EQ,$F02FFF  
+OR       0,23,EQ,$F22FFF  
+OR       0,23,EQ,$F42FFF  
+OR       0,23,EQ,$D82FFC  
+OR       0,23,EQ,$D82FFF
+OR       0,23,EQ,$C08FFF  
+OR       0,23,EQ,$806FFF
+OR       0,23,EQ,$A08FFC
+CURRENCY 0.01,2,"DM"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,27,24,1
+DISPLAY  BINARY,67,64,-1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,39,36,1
+DISPLAY  FORMAT,DEC,2,0
+DISPLAY  BINARY,43,40,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,63,60,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,59,56,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,55,52,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,51,48,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,47,44,1
+DISPLAY  TEXT,"xx"
+TEXT     24,31,EQ,$1A,"Orga","Manufacturer"
+TEXT     24,31,EQ,$2A,"Solaic","Manufacturer"
+TEXT     24,31,EQ,$4A,"ODS","Manufacturer"
+TEXT     24,31,EQ,$8A,"G+D","Manufacturer"
+TEXT     24,31,EQ,$AA,"Orga","Manufacturer"
+TEXT     24,31,EQ,$CA,"Gemplus","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : GREECE                              *
+* Usage    : Telecard                            *
+* Issuer   : OTE                                 *
+*------------------------------------------------*
+*
+* Eurochip 128 bits (11 november 1998)
+*
+CARD     "GREE_128","Greece","Telecard","OTE"
+VERIFY   0,31,EQ,$102BFF7B
+OR       0,31,EQ,$923BFF7B
+OR       0,31,EQ,$943BFF7B
+OR       0,31,EQ,$98351D7B
+OR       0,31,EQ,$E82BFF7B
+OR       0,31,EQ,$E8351D7B
+CREDIT   COUNT,71,65,512
+CREDIT   COUNT,79,73,64
+CREDIT   COUNT,89,81,8
+CREDIT   COUNT,95,89,1
+CURRENCY 0.5,0,"Units"
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+TEXT     08,15,EQ,$2B,"Gemplus","Manufacturer"
+TEXT     08,15,EQ,$3B,"G+D","Manufacturer"
+TEXT     08,15,EQ,$35,"Solaic","Manufacturer"
+*
+* Eurochip 512 bits (21 march 1999)
+*
+CARD     "GREE_512","Greece","Telecard","OTE"
+VERIFY   0,31,EQ,$93ABFF7B
+OR       0,31,EQ,$E820FF7B
+OR       0,31,EQ,$E922807B
+OR       0,31,EQ,$E930FF7B
+CREDIT   UNIT,71,65,512
+CREDIT   UNIT,79,73,64
+CREDIT   UNIT,89,81,8
+CREDIT   UNIT,95,89,1
+CURRENCY 0.5,0,"Units"
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+TEXT     00,23,EQ,$93ABFF,"Gemplus","Manufacturer"
+TEXT     00,23,EQ,$E820FF,"Schlumberger","Manufacturer"
+TEXT     00,23,EQ,$E92280,"Orga","Manufacturer"
+TEXT     00,23,EQ,$E930FF,"Schlumberger","Manufacturer"
+*
+ *------------------------------------------------*
+* Country  : GUINEA                              *
+* Usage    : Telecard                            *
+* Issuer   : Sotelgui                            *
+* Updated  : 12 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_11BE","Guinea","Telecard","Sotelgui"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$11BE
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : GUINEAN EQUATORIAL REPUBLIC         *
+* Usage    : Telecard                            *
+* Issuer   : Getesa                              *
+* Updated  : 12 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_113F","Guinean Equatorial Republic","Telecard","Getesa"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$113F
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+*
+*------------------------------------------------*
+* Country  : HUNGARY                             *
+* Usage    : Telecard                            *
+* Issuer   : ???                                 *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "OTC_11E0","Hungary","Telecard","???"
+VERIFY   8,15,EQ,$83
+VERIFY   80,95,EQ,$11E0
+CHECKSUM 0,7,8,95,$D8,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,8
+DISPLAY  BINARY,35,63,1
+TEXT     "If you know how this card works","** ATTENTION PLEASE **"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : INDONESIA                           *
+* Usage    : Telecard                            *
+* Issuer   : TELKOM                              *
+* Updated  : 21 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "INDO_T2G","Indonesia","Telecard","Telkom"
+PROTOCOL P1
+* This card definition needs CHIPY v 1.02 (11 november 1998) 
+VERIFY   0,15,EQ,$81B5
+VERIFY   24,31,EQ,$B5
+VERIFY   256,287,EQ,$F5F5F5F5
+VERIFY   384,415,EQ,$F5F5F5F5
+*VALUE    TABLE,0,23
+*VALUE    $83AB01,0,4680
+CREDIT   UNIT,70,64,-4096
+CREDIT   UNIT,78,72,-512
+CREDIT   UNIT,86,80,-64
+CREDIT   UNIT,94,88,-8
+CREDIT   UNIT,102,96,-1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxx"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : IRELAND                             *
+* Usage    : Telecard                            *
+* Issuer   : Telecom Eireann                     *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_113C","Ireland","Telecard","Telecom Eireann"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$113C
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : ISRAEL                              *
+* Usage    : Telecard                            *
+* Issuer   : Bezeq                               *
+* Updated  : 12 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_11BC","Israel","Telecard","Bezeq"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$11BC
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : IVORY COAST                         *
+* Usage    : Telecard                            *
+* Issuer   : Publicom S.A.                       *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "IVORY","Ivory Coast","Telecard","Publicom S.A."
+VERIFY   8,15,EQ,$80  
+VERIFY   80,95,EQ,$01E9
+VERIFY   76,79,EQ,$C
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BINARY,68,75,1,4
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,34,65,1
+TEXT     32,35,EQ,$0,"Schlumberger","Manufacturer"
+TEXT     32,35,EQ,$1,"Solaic","Manufacturer"
+TEXT     32,35,EQ,$4,"Gemplus","Manufacturer"
+TEXT     248,255,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : LITHUANY                            *
+* Usage    : Telecard                            *
+* Issuer   : Lietuvos Telekomas                  *
+* Updated  : 11 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "LITH_512","Lithuany","Telecard","Lieutuvos Telekomas"
+VERIFY   0,31,EQ,$E8391341
+VERIFY   104,127,EQ,$FFF0FF
+VALUE    TABLE,32,39
+VALUE    $07,500
+VALUE    $08,500
+VALUE    $17,750
+CURRENCY 0.1,1,"Pulsar"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,5
+DISPLAY  BINARY,44,63,1
+*
+*------------------------------------------------*
+* Country  : LUXEMBOURG                          *
+* Usage    : Telecard                            *
+* Issuer   : P&T Luxembourg                      *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1139","Luxembourg","Telecard","P&T Luxembourg"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1139
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : MADAGASCAR                          *
+* Usage    : Telecard                            *
+* Issuer   : Telecom Malagasy S.A.               *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_116A","Madagascar","Telecard","Telecom Malagasy S.A."
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$116A
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,36,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : MALAYSIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Malaysia Telecom                    *
+* Updated  : 28 January 1999                     *
+*------------------------------------------------*
+*
+* Eurochip 128 bits
+*
+CARD     "MALA_128","Malaysia","Telecard","Malaysia Telecom"
+VERIFY   0,23,EQ,$102B88
+OR       0,23,EQ,$983988
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,28,31
+VALUE    $1,50
+VALUE    $2,100
+VALUE    $3,200
+VALUE    $4,500
+CURRENCY 0.1,2,"RM"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,6,0
+DISPLAY  BINARY,32,55,1
+*
+* Eurochip 512 bits
+*
+CARD     "MALA_512","Malaysia","Telecard","Malaysia Telecom"
+VERIFY   0,23,EQ,$93AB88
+VERIFY   104,111,EQ,$FF
+VALUE    TABLE,28,31
+VALUE    $1,50
+VALUE    $2,100
+VALUE    $4,500
+CURRENCY 0.1,2,"RM"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,6,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : MALAYSIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Citifon                             *
+* Updated  : 31 January 1999                     *
+*------------------------------------------------*
+*
+* Eurochip 128 bits
+*
+CARD     "MALA_CIT","Malaysia","Telecard","Citifon"
+VERIFY   0,23,EQ,$102B16
+VERIFY   104,127,EQ,$FFFFFF
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+*------------------------------------------------*
+* Country  : MALAYSIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Unknown operator                    *
+* Updated  : 21 March 1999                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1116","Malaysia","Telecard","Intelcam"
+VERIFY   8,15,EQ,$83
+VERIFY   80,95,EQ,$1116
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : MALTA                               *
+* Usage    : Telecard                            *
+* Issuer   : Telemalta Corporation               *
+* Updated  : 12 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "OTC_1154","Malta","Telecard","Telemalta Corporation"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1154
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CURRENCY 0.05,2,"Lm"
+CREDIT   UNIT,96,248,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,9,0
+DISPLAY  BINARY,34,63,1
+*
+*------------------------------------------------*
+* Country  : MALI                                *
+* Usage    : Telecard                            *
+* Issuer   : Sotelma                             *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_115E","Mali","Telecard","Sotelma"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$115E
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : MEXICO                              *
+* Usage    : Telecard                            *
+*------------------------------------------------*
+*
+* Telnor 25.00 N$
+*
+CARD     "TELNOR25","Mexico","Telecard","Telnor"
+VERIFY   8,15,EQ,$83
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E24
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $14CA,250,0
+CURRENCY 0.1,2,"N$"
+CREDIT   GROUP,205,106,-1
+CREDIT   GROUP,255,206,-3
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* Telnor 35.00 N$
+*
+CARD     "TELNOR35","Mexico","Telecard","Telnor"
+VERIFY   8,15,EQ,$83
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E24
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $154A,350,0
+CURRENCY 0.1,2,"N$"
+CREDIT   GROUP,205,106,-1
+CREDIT   GROUP,255,206,-5
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* Telnor 50.00 N$
+*
+CARD     "TELNOR50","Mexico","Telecard","Telnor"
+VERIFY   8,15,EQ,$83
+VERIFY   16,31,EQ,$FFFF
+VERIFY   80,95,EQ,$1E24
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $3102,500,0
+CURRENCY 0.1,2,"N$"
+CREDIT   GROUP,135,116,-1
+CREDIT   GROUP,255,136,-4
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* Ladatel (Telmex)
+*
+CARD     "LADATEL","Mexico","Telecard","Ladatel (Telmex)"
+VERIFY   8,15,EQ,$80  
+VERIFY   80,87,EQ,$32
+OR       80,87,EQ,$64
+VERIFY   88,95,EQ,$59
+VERIFY   76,79,EQ,$C
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BINARY,68,75,1,4
+CURRENCY 0.5,2,"N$"
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,36,65,1
+TEXT     32,35,EQ,$0,"Schlumberger","Manufacturer"
+TEXT     32,35,EQ,$1,"Solaic","Manufacturer"
+TEXT     32,35,EQ,$4,"Gemplus","Manufacturer"
+TEXT     248,255,EQ,$FF,"Card marked as empty"
+*
+*------------------------------------------------*
+* Country  : REPUBLIC OF MOLDOVA                 *
+* Usage    : Telecard                            *
+* Issuer   : MoldTelecom                         *
+* Updated  : 24 January 1999                     *
+*------------------------------------------------*
+*
+* Eurochip 512 bits
+*
+CARD     "MOLD_512","REPUBLIC OF MOLDOVA","Telecard","MoldTelecom"
+VERIFY   0,27,EQ,$E820FFB
+OR       0,27,EQ,$E82B07B
+OR       0,27,EQ,$E930B1B
+VALUE    TABLE,28,31
+VALUE    $4,100,0
+VALUE    $8,75,0
+VALUE    $B,100,0
+VALUE    $C,200,0
+CREDIT   COUNT,71,64,4096
+CREDIT   COUNT,79,72,512
+CREDIT   COUNT,87,80,64
+CREDIT   COUNT,95,88,8
+CREDIT   COUNT,103,96,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+*
+*------------------------------------------------*
+* Country  : MOROCCO                             *
+* Usage    : Telecard                            *
+* Issuer   : Ave Phone                           *
+* Updated  : 28 September 1998                   *
+*------------------------------------------------*
+*
+CARD     "OTC_11E2","Morocoo","Telecard","Ave Phone"
+VERIFY   8,15,EQ,$83
+VERIFY   80,95,EQ,$11E2
+CHECKSUM 0,7,8,95,$D8,-1 
+TEXT     "If you know how this card works","** ATTENTION PLEASE **"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : MOROCOO                             *
+* Usage    : Telecard                            *
+* Issuer   : Unknow operator                     *
+* Updated  : 23 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_11B7","Morocco","Telecard","Unknown operator"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$11B7
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,231,-1
+DISPLAY  "Shop ID"
+DISPLAY  FORMAT,HEXA,2
+DISPLAY  BINARY,232,239,1
+TEXT     232,239,EQ,$18,"Telekiosques, Smarty phone","Shop Name"
+TEXT     232,239,EQ,$11,"Mahnaoui, La pergola, Dcheira, Agadir","Shop Name"
+TEXT     232,239,EQ,$69,"Bir Anzarane, Place Bir Anzarane, Ben Ahmed","Shop Name"
+TEXT     "5 extra units may be burn when card is empty","Note"
+TEXT     "If 'Shop ID' appears and 'Shop Name' did not"
+TEXT     "Please email telecard@wanadoo.fr - Thanks"
+*
+*------------------------------------------------*
+* Country  : NETHERLANDS                         *
+* Usage    : Telecard                            *
+* Issuer   : Telekom                             *
+* Updated  : 31 January 1998                     *
+*------------------------------------------------*
+*
+CARD     "NETHERL","Netherlands","Telecard","PTT Telecom"
+VERIFY   0,23,EQ,$8037FF
+OR       0,23,EQ,$8077FF  
+OR       0,23,EQ,$D837FF  
+OR       0,23,EQ,$F037FF  
+VALUE    TABLE,32,35
+VALUE    $2,1000,0
+VALUE    $4,500,0
+VALUE    $6,2500,0
+CURRENCY 0.01,2,"NLG"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,27,24,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,63,60,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,59,56,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,55,52,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,51,48,1
+DISPLAY  FORMAT,DEC,1,0
+DISPLAY  BINARY,47,44,1
+DISPLAY  TEXT,"xxx"
+TEXT     24,31,EQ,$1A,"Orga","Manufacturer"
+TEXT     24,31,EQ,$2A,"Solaic","Manufacturer"
+TEXT     24,31,EQ,$4A,"ODS","Manufacturer"
+TEXT     24,31,EQ,$8A,"G+D","Manufacturer"
+TEXT     24,31,EQ,$AA,"Orga","Manufacturer"
+TEXT     24,31,EQ,$CA,"Gemplus","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : NIGERIA                             *
+* Usage    : Telecard                            *
+* Issuer   : NITEL                               *
+* Updated  : 21 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "OTD_3152","Nigeria","Telecard","Nitel"
+VERIFY   8,19,EQ,$871  
+VERIFY   80,95,EQ,$3152
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,1279,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,7,0
+DISPLAY  BINARY,36,63,1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : NORWAY                              *
+* Usage    : Telecard                            *
+* Issuer   : Telenor                             *
+* Updated  : 28 January 1999                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1130","Norway","Telecard","Telenor"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1130
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : NEW CALEDONIA                       *
+* Usage    : Telecard                            *
+* Issuer   : OPT                                 *
+* Updated  : 29 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1131","New Caledonia","Telecard","OPT"
+VERIFY   8,19,EQ,$831
+VERIFY   80,95,EQ,$1131
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : PERU                                *
+* Usage    : Telecard                            *
+* Issuer   : Unknown operator                    *
+* Updated  : 21 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "OTC_11E3","Peru","Telecard","Unknown operator"
+VERIFY   8,15,EQ,$83
+VERIFY   80,95,EQ,$11E3
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+*
+*------------------------------------------------*
+* Country  : POLAND                              *
+* Usage    : Telecard                            *
+* Issuer   : ???                                 *
+* Updated  : 4 November 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_11D5","Poland","Telecard","???"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$11D5
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,HEXA,6,0
+DISPLAY  BINARY,40,63,1
+DISPLAY  FORMAT,HEXA,4,0
+DISPLAY  BINARY,64,79,1
+*
+*------------------------------------------------*
+* Country  : PORTUGAL                            *
+* Usage    : Telecard                            *
+* Issuer   : TLP / Portugal Telecom              *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_1147","Portugal","Telecard","TLP / Portugal Telecom"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$1147
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+DISPLAY  TEXT," / "
+DISPLAY  FORMAT,HEXA,7
+DISPLAY  BINARY,40,63,1
+*
+*------------------------------------------------*
+* Country  : ROMANIA                             *
+* Usage    : Telecard                            *
+* Issuer   : Rom Telecom                         *
+* Updated  : 24 January 1999                     *
+*------------------------------------------------*
+*
+CARD     "ROM_128","Romania","Telecard","Rom Telecom"
+VERIFY   0,23,EQ,$102B2F
+OR       0,23,EQ,$102B17
+OR       0,23,EQ,$93AB2F
+OR       0,23,EQ,$98202F
+OR       0,23,EQ,$993C2F
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+CARD     "ROM_512","Romania","Telecard","Rom Telecom"
+VERIFY   0,23,EQ,$E82B17
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+*------------------------------------------------*
+* Country  : RUSSIA                              *
+* Usage    : Telecard                            *
+* Issuer   : Multiple issuers in Russia          *
+*------------------------------------------------*
+*
+* Eurochip 512 bits - Issuer: CNM
+*
+CARD     "RUS_CNM","Russia","Telecard","CNM"
+VERIFY   0,31,EQ,$E820FF01
+OR       0,31,EQ,$E82BFF01
+OR       0,31,EQ,$E830FF01
+OR       0,31,EQ,$E922FF01
+OR       0,31,EQ,$E930FF01
+VERIFY   104,111,EQ,$FF
+VALUE    TABLE,56,59
+VALUE    $1,400,0
+VALUE    $E,400,0
+VALUE    $6,100,0
+VALUE    $A,100,0
+VALUE    $C,50,0
+VALUE    $2,25,0
+VALUE    $8,25,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,10,0
+DISPLAY  BINARY,63,32,1
+*
+* Eurochip 128 bits - Issuer:  Krasnodar city telephone station
+* 23 March 1999
+*
+CARD     "RUS_KRAS","Russia","Telecard","Krasnodar city telephone station"
+VERIFY   0,31,EQ,$E83140F4
+VERIFY   104,127,EQ,$FFFFFF
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+*
+* Eurochip 512 bits - Issuer: MCTN
+*
+CARD     "RUS_MRTC","Russia","Telecard","MCTN"
+VERIFY   0,23,EQ,$E830CF
+OR       0,23,EQ,$E93007
+VERIFY   104,111,EQ,$FF
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+VALUE    TABLE,58,63
+VALUE    $6,60,0
+VALUE    $A,50,0
+VALUE    $C,30,0
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxxx"
+DISPLAY  FORMAT,DEC,6,0
+DISPLAY  BINARY,38,57,1
+TEXT     24,31,EQ,$01,"Schlumberger","Manufacturer"
+TEXT     24,31,EQ,$03,"Schlumberger","Manufacturer"
+*
+* T2G Gemplus - Issuer: MCTN
+*
+CARD     "RUS_T2G","Russia","Telecard","MCTN"
+PROTOCOL P1
+* This card definition needs CHIPY v 1.02 (11 november 1998) 
+VERIFY   0,23,EQ,$83AB01
+VERIFY   64,71,EQ,$FF
+VERIFY   256,287,EQ,$F5F5F5F5
+VERIFY   384,415,EQ,$F5F5F5F5
+VALUE    TABLE,0,23
+VALUE    $83AB01,0,4680
+CREDIT   UNIT,72,79,-512
+CREDIT   UNIT,80,87,-64
+CREDIT   UNIT,88,95,-8
+CREDIT   UNIT,96,103,-1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxx"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : SENEGAL                             *
+* Usage    : Telecard                            *
+* Issuer   : Sonatel                             *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_111C","Senegal","Telecard","Sonatel"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$111C
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,255,-1
+TEXT     "5 extra units may be burn when card is empty","Note"
+*
+*------------------------------------------------*
+* Country  : SLOVAKIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Slovenske Telekomunikacie           *
+* Updated  : 31 January 1999                     *
+*------------------------------------------------*
+*
+CARD     "SLOV_128","Slovakia","Telecard","Slovenske Telekomunikacie"
+VERIFY   0,23,EQ,$102B12
+OR       0,23,EQ,$923BFF
+OR       0,23,EQ,$9825FF
+OR       0,23,EQ,$98350C
+VERIFY   104,127,EQ,$FFFFFF
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+*
+*------------------------------------------------*
+* Country  : SLOVENIA                            *
+* Usage    : Telecard                            *
+* Issuer   : Telekom Slovenia                    *
+* Updated  : 30 June 1999                        *
+*------------------------------------------------*
+*
+CARD     "SLOE_512","Slovenia","Telecard","Telekom Slovenia"
+VERIFY   0,23,EQ,$E82B0B
+VERIFY   104,111,EQ,$FF
+VALUE    TABLE,24,27
+VALUE    $4,100,0
+VALUE    $6,300,0
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,7,0
+DISPLAY  BINARY,40,63,1
+*
+*------------------------------------------------*
+* Country  : SOUTH AFRICA                        *
+* Usage    : Telecard                            *
+* Issuer   : Telkom                              *
+* Updated  : 3 December 1998                     *
+*------------------------------------------------*
+*
+* Eurochip 128 Bits
+*
+CARD     "SAFR_128","South Africa","Telecard","Telkom"
+VERIFY   0,31,EQ,$923BFF06
+OR       0,31,EQ,$923BFF09
+OR       0,23,EQ,$9828FF
+OR       0,23,EQ,$983EFF
+CURRENCY 0.05,2,"R"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+*
+* Eurochip 512 Bits
+*
+CARD     "SAFR_512","South Africa","Telecard","Telkom"
+VERIFY   0,23,EQ,$B83EFF
+CURRENCY 0.05,2,"R"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : SPAIN                               *
+* Usage    : Telecard                            *
+* Issuer   : Telefonica de Espana (CabiTel)      *
+*------------------------------------------------*
+*
+* 500 Pta Card
+*
+CARD     "SPA500","Spain","Telecard","Telefonica de Espana (CabiTel)"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   64,79,EQ,$000A
+VERIFY   80,95,EQ,$1E22
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $000A,100,0
+CURRENCY 5,0,"Pta"
+CREDIT   GROUP,255,156,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur / F.N.M.T.","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+TEXT     224,255,EQ,$88888888,"May be a 100 Pta card","Note"
+TEXT     224,255,EQ,$FFFFFFFF,"May be a 250  Pta card","Note"
+*
+* 1000 Pta Card
+*
+CARD     "SPA1000","Spain","Telecard","Telefonica de Espana (CabiTel)"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   64,79,EQ,$148A
+VERIFY   80,95,EQ,$1E22
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $148A,200,0
+CURRENCY 5,0,"Pta"
+CREDIT   GROUP,205,106,-1
+CREDIT   GROUP,255,206,-2
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur / F.N.M.T.","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* 2000 Pta Card
+*
+CARD     "SPA2000","Spain","Telecard","Telefonica de Espana (CabiTel)"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   64,79,EQ,$2504
+VERIFY   80,95,EQ,$1E22
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $2504,400,0
+CURRENCY 5,0,"Pta"
+CREDIT   GROUP,165,126,-1
+CREDIT   GROUP,255,166,-4
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur / F.N.M.T.","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+*
+* 2100 Pta Card
+*
+CARD     "SPA2100","Spain","Telecard","Telefonica de Espana (CabiTel)"
+VERIFY   8,15,EQ,$83  
+VERIFY   16,31,EQ,$FFFF
+VERIFY   64,79,EQ,$2506
+VERIFY   80,95,EQ,$1E22
+VERIFY   96,105,EQ,$3FF
+CHECKSUM 0,7,8,95,$D8,-1
+VALUE    TABLE,64,79
+VALUE    $2506,420,0
+CURRENCY 5,0,"Pta"
+CREDIT   GROUP,165,106,-1
+CREDIT   GROUP,255,166,-4
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,40,63,1
+TEXT     32,39,EQ,$90,"Oberthur / F.N.M.T.","Manufacturer"
+TEXT     32,39,EQ,$30,"G+D","Manufacturer"
+TEXT     32,39,EQ,$5A,"Gemplus","Manufacturer"
+TEXT     32,39,EQ,$A0,"Solaic","Manufacturer"
+TEXT     224,255,EQ,$11111111,"May be a 1200 Pta card","Note"
+*
+* Eurochip Card
+*
+CARD     "SPA_EUR","Spain","Telecard","Telefonica de Espana"
+VERIFY   0,15,EQ,$E03C
+VALUE    TABLE,24,31
+VALUE    $08,1000,0
+VALUE    $18,2100,0
+VALUE    $41,100,0
+CURRENCY 1,0,"Pta"
+CREDIT   UNIT,79,72,512
+CREDIT   UNIT,87,80,64
+CREDIT   UNIT,95,88,8
+CREDIT   UNIT,103,96,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+TEXT     16,23,EQ,$31,"G+D","Manufacturer"
+TEXT     16,23,EQ,$91,"F.N.M.T.","Manufacturer"
+TEXT     16,23,EQ,$A1,"Solaic","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : SWAZILAND                           *
+* Usage    : Telecard                            *
+* Issuer   : Phutfumani                          *
+* Updated  : 12 November 1998                    *
+*------------------------------------------------*
+*
+CARD     "SWAZI","Swaziland","Telecard","Phutfumani"
+VERIFY   0,31,EQ,$E8353BA3
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"SGAB"
+DISPLAY  FORMAT,DEC,3,0
+DISPLAY  BINARY,56,63,1
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+*------------------------------------------------*
+* Country  : SWEEDEN                             *
+* Usage    : Telecard                            *
+* Issuer   : Telia                               *
+* Updated  : 28 October 1998                     *
+*------------------------------------------------*
+*
+CARD     "OTC_111E","Sweeden","Telecard","Telia"
+VERIFY   8,19,EQ,$831  
+VERIFY   80,95,EQ,$111E
+CHECKSUM 0,7,8,95,$D8,-1 
+VALUE    BCD,20,31,1,-2
+CREDIT   UNIT,96,247,-1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,9,0
+DISPLAY  BINARY,40,63,1
+*
+*------------------------------------------------*
+* Country  : SWISS                               *
+* Usage    : Telecard                            *
+* Issuer   : Swisscom                            *
+* Updated  : 29 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "SWISS","Swiss","Telecard","Swisscom"
+VERIFY   0,23,EQ,$D82AFF
+OR       0,23,EQ,$DD2A0F
+OR       0,23,EQ,$DD2A2F
+OR       0,23,EQ,$DD2A4F
+VALUE    TABLE,32,35
+VALUE    $2,1000,0
+VALUE    $4,500,0
+VALUE    $6,2000,0
+CURRENCY 0.01,2,"CHF"
+CREDIT   UNIT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  TEXT,"xxxx"
+DISPLAY  FORMAT,HEXA,5,0
+DISPLAY  BINARY,63,44,1
+DISPLAY  TEXT,"xx"
+TEXT     0,15,EQ,$DD2A,"'Eurochip' may be printed above the chip","Note"
+TEXT     24,31,EQ,$1A,"Orga [TBC]","Manufacturer"
+TEXT     24,31,EQ,$2A,"Solaic [TBC]","Manufacturer"
+TEXT     24,31,EQ,$4A,"ODS [TBC]","Manufacturer"
+TEXT     24,31,EQ,$8A,"G+D [TBC]","Manufacturer"
+TEXT     24,31,EQ,$9A,"CardIntell","Manufacturer"
+TEXT     24,31,EQ,$CA,"Gemplus","Manufacturer"
+*
+*------------------------------------------------*
+* Country  : TAAF                                *
+* Usage    : Telecard                            *
+* Issuer   : LANDIS &GIR                         *
+* Updated  : 21 March 1999                       *
+*------------------------------------------------*
+*
+CARD     "taaf_512","TAAF","Telecard","LANDIS&GYR"
+VERIFY   0,31,EQ,$19FF000E
+CREDIT   BINARY,96,111,1
+TEXT     "If you have one of these cards please email me","** ATTENTION PLEASE **"
+*
+*
+*------------------------------------------------*
+* Country  : VENEZUELA                           *
+* Usage    : Telecard                            *
+* Issuer   : CANTV                               *
+* Updated  : 31 January 1999                     *
+*------------------------------------------------*
+*
+* Eurochip 128
+*
+CARD     "VENE_128","Venezuela","Telecard","CANTV"
+VERIFY   0,23,EQ,$102B1F
+OR       0,23,EQ,$98351F
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,28,31
+VALUE    $0,1000,0
+VALUE    $2,4000,0
+VALUE    $4,8000,0
+CURRENCY 0.25,2,"Bs"
+CREDIT   COUNT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+*
+* Eurochip 512
+*
+CARD     "VENE_512","Venezuela","Telecard","CANTV"
+VERIFY   0,23,EQ,$930B1F
+OR       0,23,EQ,$93AB1F
+OR       0,23,EQ,$93AC1F
+VERIFY   104,127,EQ,$FFFFFF
+VALUE    TABLE,28,31
+VALUE    $0,1000,0
+VALUE    $2,4000,0
+VALUE    $4,8000,0
+CURRENCY 0.25,2,"Bs"
+CREDIT   COUNT,71,65,4096
+CREDIT   UNIT,79,73,512
+CREDIT   UNIT,87,81,64
+CREDIT   UNIT,95,89,8
+CREDIT   UNIT,103,97,1
+DISPLAY  "Serial Number"
+DISPLAY  FORMAT,DEC,8,0
+DISPLAY  BINARY,32,55,1
+

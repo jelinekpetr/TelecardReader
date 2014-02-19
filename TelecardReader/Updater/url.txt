@@ -1,0 +1,2 @@
+http://telecardreader.petrjelinek.net/updater.php?action=setnew&projekt=TelecardReader&verze=0.9.0
+http://telecardreader.petrjelinek.net/updater.php?action=check&projekt=TelecardReader

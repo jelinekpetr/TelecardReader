@@ -1,0 +1,19 @@
+-1 : nenalezen CHIPYDEF.txt
+-2 : Sériový port "+ portName +" není k dispozici
+-3 : Konfigurační soubor nebyl nalezen." + newline + "(" + getAbsolutePath() + ")
+-4 : Chyba během čtení konfiguračního souboru." + newline + "(" + this.getAbsolutePath() + ")
+-5 : Chyba během zápisu do konfiguračního souboru." + newline + "(" + this.getAbsolutePath() + ")
+-6 : Chyba při čtení z dočasného souboru." + newline + "(" + getAbsolutePath() + ")
+-7 : Dočasný soubor nebyl nalezen." + newline + "(" + getAbsolutePath() + ")
+-8 : Chyba během zápisu do dočasného souboru." + newline + "(" + this.getAbsolutePath() + ")
+-9 : MySQL databáze není k dispozici...
+-10 : V databázi nejsou vytvořeny potřebné tabulky
+-11 : Chyba při vytváření objektu Statement
+-12 : Chyba při čtení katalogů
+-13 : Chyba při čtení tabulky karet
+-14 : Chyba při čtení číselníku zemí
+-15 : Chyba při čtení katalogů
+-16 : Karta pod katalogovým číslem 'XXX' nešla vložit do databáze. Chyba: XXX
+-17 : Čtečka byla odpojena. Připojte čtečku znovu.
+-18 : Soubor s katalogy nebyl nalezen." + newline + "("+ getAbsolutePath() + ")"
+-19 : Soubor se zeměmi nebyl nalezen." + newline + "("+ getAbsolutePath() + ")"
