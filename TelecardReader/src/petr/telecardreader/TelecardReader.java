@@ -1289,7 +1289,7 @@ public class TelecardReader extends JFrame {
 				JFrame dialogFrame = new JFrame();
 				dialogFrame.setVisible(false);
 				Object stringArray[] = {"Nainstalovat", "Odložit instalaci"};
-				Object[] obj = {"Je k dispozici nová verze programu ("+version+")\n\n"+"Přejete si naistalovat novou verzi?"};
+				Object[] obj = {"Je k dispozici nová verze programu ("+version+")\n\n"+"Přejete si nainstalovat novou verzi?"};
 				int odp = JOptionPane.showOptionDialog(dialogFrame, obj,
 						"Nová verze programu", JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE, null, stringArray, obj);
 				if (odp == 0) { // Nainstalovat
