@@ -1343,7 +1343,7 @@ public class TelecardReader extends JFrame {
 		//UIManager.put("Label.font", new Font("Courier", Font.PLAIN, 12));
 
 		TelecardReader telecardReader = new TelecardReader();
-		telecardReader.setTitle(windowTitle + " ver. " + CurrentVersion.VERSION);
+		telecardReader.setTitle(windowTitle + " version " + CurrentVersion.VERSION);
 		telecardReader.setPreferredSize(new Dimension(800, 600));
 		telecardReader.pack();
 		//telecardReader.setResizable(false);
